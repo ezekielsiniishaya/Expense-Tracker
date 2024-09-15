@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eazynote Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="icon (3).ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>ADD EXPENSE</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <section class="section_add_expense">
+      <form action="view_expense.html" method="GET" class="form">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" name="amount" required />
+
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" required />
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required />
+
+        <button type="submit" class="btn">Add Expense</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Expense Tracker Application</p>
+    </footer>
+  </body>
+</html>
