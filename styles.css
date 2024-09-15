@@ -6,6 +6,7 @@ body {
 }
 main {
   flex: 1;
+  width: 100%;
 }
 body {
   display: flex;
@@ -14,7 +15,8 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
   background-image: url("https://c0.wallpaperflare.com/preview/970/895/709/income-tax-calculator-accounting-financial.jpg");
   background-size: cover;
@@ -59,7 +61,7 @@ h1 {
 .section_home {
   margin: 100px auto;
   max-width: 600px;
-  padding: 20px;
+  padding: 20px 0 20px 0;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -71,7 +73,7 @@ h1 {
 .section_add_expense,
 .section_edit {
   margin: 100px auto;
-  width: 90%;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.897);
   border-radius: 10px;
   text-align: center;
@@ -198,8 +200,8 @@ a:hover {
   .section_add_expense,
   .section_edit,
   .section_home {
-    width: 90%;
-    padding: 15px;
+    width: 100%;
+    padding: 15px 0 15px 0;
     margin: 0;
   }
 
@@ -230,5 +232,8 @@ a:hover {
   }
   footer {
     font-size: 0.7em;
+    width: 100%;
+    margin: auto;
+    padding: 0;
   }
 }
