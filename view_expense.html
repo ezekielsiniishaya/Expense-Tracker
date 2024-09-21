@@ -1,90 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eazynote Expense Tracker</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/x-icon" href="icon (3).ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <h1>EXPENSES</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>
-      </nav>
-    </header>
-    <main>
-      <section class="section_expenses">
-        <table>
-          <thead>
-            <tr>
-              <th>Amount (Naira)</th>
-              <th>Description</th>
-              <th>Date</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2200</td>
-              <td>Gari</td>
-              <td>2024-09-10</td>
-              <td>
-                <a href="edit_expense.html"><button class="btn">Edit</button> </a>
-                <button class="btn">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>500</td>
-              <td>Transport</td>
-              <td>2024-09-10</td>
-              <td>
-                <a href="edit_expense.html"><button class="btn">Edit</button> </a>
-                <button class="btn">Delete</button>
-              </td>
-            </tr>
-              <td>500</td>
-              <td>Airtime</td>
-              <td>2024-09-10</td>
-              <td>
-                <a href="edit_expense.html"><button class="btn">Edit</button> </a>
-                <button class="btn">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>700</td>
-              <td>Bread</td>
-              <td>2024-09-10</td>
-              <td>
-                <a href="edit_expense.html"><button class="btn">Edit</button> </a>
-                <button class="btn">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td> 800</td>
-              <td>Kuli-Kuli</td>
-              <td>2024-09-10</td>
-              <td>
-                <a href="edit_expense.html"><button class="btn">Edit</button> </a>
-                <button class="btn">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <a href="add_expense.html"><button class="btn_entry">Add Expense</button> </a>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2024 Expense Tracker Application</p>
-    </footer>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eazynote Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="icon (3).ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <h1>EXPENSES</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+  <main>
+    <section class="section_expenses">
+      <table>
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Date</th>
+            <th>Amount (Naira)</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>2024-09-10</td>
+            <td>2200</td>
+            <td>Gari</td>
+
+            <td>
+              <a href="edit_expense.html"><button class="btn">Edit</button> </a>
+              <button class="btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>2024-09-10</td>
+            <td>500</td>
+            <td>Transport</td>
+
+            <td>
+              <a href="edit_expense.html"><button class="btn">Edit</button> </a>
+              <button class="btn">Delete</button>
+            </td>
+          </tr>
+          <td>3</td>
+          <td>2024-09-10</td>
+          <td>500</td>
+          <td>Airtime</td>
+
+          <td>
+            <a href="edit_expense.html"><button class="btn">Edit</button> </a>
+            <button class="btn">Delete</button>
+          </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>2024-09-10</td>
+            <td>700</td>
+            <td>Bread</td>
+
+            <td>
+              <a href="edit_expense.html"><button class="btn">Edit</button> </a>
+              <button class="btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>2024-09-10</td>
+            <td>800</td>
+            <td>Kuli-Kuli</td>
+
+            <td>
+              <a href="edit_expense.html"><button class="btn">Edit</button> </a>
+              <button class="btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="add_expense.html"><button class="btn_entry">Add Expense</button> </a>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Expense Tracker Application</p>
+  </footer>
+</body>
+
 </html>
