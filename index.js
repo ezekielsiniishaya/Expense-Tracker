@@ -129,21 +129,23 @@ app.get("/view_expense.html", (req, res) => {
 
 // Add Expense Route
 app.post("/add-expense", (req, res) => {
-  const { date, amount, description } = req.body;
+  const { date, amount, description, category, paymentMethod } = req.body;
 
   // Log expense details
   console.log("Adding expense:", {
     date,
     amount,
     description,
+    category,
+    paymentMethod,
     userId: req.session.userId,
   });
 
   const query =
-    "INSERT INTO expenses (date, amount, description, user_id) VALUES (?, ?, ?, ?)";
+    "INSERT INTO expenses (date, amount, description, category, paymentMethod, user_id) VALUES (?, ?, ?, ?, ?, ?)";
   db.query(
     query,
-    [date, amount, description, req.session.userId],
+    [date, amount, description, category, paymentMethod, req.session.userId],
     (err, results) => {
       if (err) {
         console.error("Error adding expense:", err.message);
@@ -203,6 +205,16 @@ app.delete("/delete-expense/:id", (req, res) => {
       return res.status(500).send("Error deleting expense");
     }
     res.status(200).json({ message: "Expense deleted successfully" });
+  });
+});
+app.get("/api/expense", (req, res) => {
+  const query = "SELECT SUM(amount) AS total FROM expenses WHERE user_id = ?";
+  db.query(query, [req.session.userId], (err, results) => {
+    if (err) {
+      console.error("Error calculating total expenses:", err.message);
+      return res.status(500).send("Error calculating total expenses");
+    }
+    res.status(200).json({ total: results[0].total || 0 });
   });
 });
 

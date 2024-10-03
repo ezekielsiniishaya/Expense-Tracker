@@ -30,6 +30,16 @@
         <input type="number" id="amount" name="amount" required />
         <label for="description">Description</label>
         <input type="text" id="description" name="description" required />
+        <label for="category">Category</label>
+        <input type="text" id="category" name="category" required />
+        <label for="paymentMethod">Payment Method</label>
+        <select id="paymentMethod" name="paymentMethod">
+          <option value="Bank Transfer">Bank Transfer</option>
+          <option value="Cash">Cash</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="Credit Card">Credit Card</option>
+        </select>
+
         <button type="submit" class="btn">Add Expense</button>
       </form>
     </section>

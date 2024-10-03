@@ -18,7 +18,8 @@ document
     const dateInput = formData.get("date"); // YYYY-MM-DD format from input
     const amountInput = formData.get("amount");
     const descriptionInput = formData.get("description");
-
+    const categoryInput = formData.get("category");
+    const paymentMethodInput = formData.get("paymentMethod");
     // Convert to yyyy-mm-dd format
     const formattedDate = formatDateToYYYYMMDD(dateInput);
 
@@ -27,6 +28,8 @@ document
       date: formattedDate, // Use the correctly formatted date
       amount: amountInput,
       description: descriptionInput,
+      category: categoryInput,
+      paymentMethod: paymentMethodInput,
     };
 
     const response = await fetch("/add-expense", {
@@ -64,6 +67,8 @@ if (document.getElementById("expense-list")) {
                     <td>${formattedDate}</td>
                     <td>${expense.amount}</td>
                     <td>${expense.description}</td>
+                    <td>${expense.category}</td>
+                    <td>${expense.paymentMethod}</td>
                     <td>
                         <button onclick="editExpense(${
                           expense.id
@@ -113,6 +118,7 @@ if (document.getElementById("edit-expense-form")) {
       const date = document.getElementById("date").value;
       const amount = document.getElementById("amount").value;
       const description = document.getElementById("description").value;
+      const category = document.getElementById("category").value;
 
       // Convert to yyyy-mm-dd format
       const formattedDate = formatDateToYYYYMMDD(date);
@@ -122,7 +128,12 @@ if (document.getElementById("edit-expense-form")) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ date: formattedDate, amount, description }), // Send formatted date
+        body: JSON.stringify({
+          date: formattedDate, // Send formatted date
+          amount,
+          description,
+          category,
+        }),
       })
         .then((response) => {
           if (!response.ok) {

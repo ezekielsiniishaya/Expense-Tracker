@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
@@ -135,7 +138,8 @@ button:hover,
   font-size: 11px;
 }
 form input,
-form label {
+form label,
+form select {
   display: block;
   width: 90%;
   margin: auto;

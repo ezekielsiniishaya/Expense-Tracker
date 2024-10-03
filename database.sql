@@ -16,7 +16,8 @@ CREATE TABLE expenses (
   user_id INT,
   date DATE,
   amount DECIMAL(10, 2),
-  description TEXT,
+  description VARCHAR(50),
+  category VARCHAR(50),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(id)
