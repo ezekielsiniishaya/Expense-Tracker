@@ -1,8 +1,10 @@
-CREATE DATABASE expense_tracker;
+CREATE DATABASE IF NOT EXISTS `expense_tracker`;
 
 USE expense_tracker;
 
-CREATE TABLE users (
+DROP TABLE IF EXISTS `expenses`;
+
+CREATE TABLE IF NOT EXISTS `users` (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100),
   email VARCHAR(100) UNIQUE,
@@ -18,6 +20,7 @@ CREATE TABLE expenses (
   amount DECIMAL(10, 2),
   description VARCHAR(50),
   category VARCHAR(50),
+  paymentMethod ENUM('Credit Card', 'Debit Card', 'Cash', 'Bank Transfer'), 
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(id)
