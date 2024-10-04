@@ -19,7 +19,7 @@ CREATE TABLE expenses (
   date DATE,
   amount DECIMAL(10, 2),
   description VARCHAR(50),
-  category VARCHAR(50),
+  category ENUM('Food', 'Transportation', 'Tax', 'Housing', 'Personal care', 'Entertainment', 'Education','Debt', 'Miscellaneous'),
   paymentMethod ENUM('Credit Card', 'Debit Card', 'Cash', 'Bank Transfer'), 
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

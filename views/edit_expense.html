@@ -23,13 +23,33 @@
   </header>
   <main>
     <section class="section_edit">
-      <form id="edit-expense-form" action="" method="POST">
+      <form id="edit-expense-form" action="/edit-expense/<expenseId>" method="POST">
         <label for="date">Date</label>
         <input type="date" id="date" name="date" required />
         <label for="amount">Amount</label>
         <input type="number" id="amount" name="amount" required />
         <label for="description">Description</label>
         <input type="text" id="description" name="description" required />
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option value="Food">Food</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Housing">Housing</option>
+          <option value="Debt">Debt</option>
+          <option value="Education">Education</option>
+          <option value="Personal care">Personal care</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Miscellaneous">Miscellaneous</option>
+          <option value="Tax">Tax</option>
+        </select>
+        <label for="paymentMethod">Payment Method</label>
+        <select id="paymentMethod" name="paymentMethod">
+          <option value="Bank Transfer">Bank Transfer</option>
+          <option value="Cash">Cash</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="Credit Card">Credit Card</option>
+        </select>
+
         <button type="submit" class="btn">Update Expense</button>
       </form>
     </section>
@@ -38,50 +58,6 @@
     <p>&copy; 2024 Expense Tracker Application</p>
   </footer>
   <script src="/script.js"></script>
-  <!DOCTYPE html>
-  <html lang="en">
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Expense - Expense Tracker</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="icon" type="image/x-icon" href="/icon (3).ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet" />
-  </head>
-
-  <body>
-    <header>
-      <h1>EDIT EXPENSE</h1>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/register">Register</a>
-        <a href="/login">Login</a>
-      </nav>
-    </header>
-    <main>
-      <section class="section_edit">
-        <form id="edit-expense-form" action="/edit-expense/<expenseId>" method="POST">
-          <label for="date">Date</label>
-          <input type="date" id="date" name="date" required />
-          <label for="amount">Amount</label>
-          <input type="number" id="amount" name="amount" required />
-          <label for="description">Description</label>
-          <input type="text" id="description" name="description" required />
-          <button type="submit" class="btn">Update Expense</button>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2024 Expense Tracker Application</p>
-    </footer>
-    <script src="/script.js"></script>
-  </body>
-
-  </html>
-
 </body>
 
 </html>

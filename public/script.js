@@ -110,6 +110,36 @@ const urlParams = new URLSearchParams(window.location.search);
 const expenseId = urlParams.get("id"); // Get the expense ID from the URL
 
 if (document.getElementById("edit-expense-form")) {
+  // Define the function to load the expense data when the page loads
+  async function loadExpenseData(expenseId) {
+    try {
+      const response = await fetch(`/api/edit_expense/${expenseId}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const expense = await response.json();
+
+      // Format the date to 'yyyy-mm-dd'
+      const formattedDate = new Date(expense.expense.date)
+        .toISOString()
+        .split("T")[0];
+
+      // Populate the form with expense data
+      document.getElementById("amount").value = expense.expense.amount;
+      document.getElementById("category").value = expense.expense.category;
+      document.getElementById("paymentMethod").value =
+        expense.expense.paymentMethod;
+      document.getElementById("description").value =
+        expense.expense.description;
+      document.getElementById("date").value = formattedDate;
+    } catch (error) {
+      console.error("Error loading expense data:", error);
+    }
+  }
+
+  // Load expense data on page load
+  loadExpenseData(expenseId);
+
   document
     .getElementById("edit-expense-form")
     .addEventListener("submit", function (e) {
@@ -119,6 +149,7 @@ if (document.getElementById("edit-expense-form")) {
       const amount = document.getElementById("amount").value;
       const description = document.getElementById("description").value;
       const category = document.getElementById("category").value;
+      const paymentMethod = document.getElementById("paymentMethod").value;
 
       // Convert to yyyy-mm-dd format
       const formattedDate = formatDateToYYYYMMDD(date);
@@ -133,6 +164,7 @@ if (document.getElementById("edit-expense-form")) {
           amount,
           description,
           category,
+          paymentMethod,
         }),
       })
         .then((response) => {

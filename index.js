@@ -173,6 +173,36 @@ app.get("/expenses", (req, res) => {
     res.status(200).json(results);
   });
 });
+// API route to fetch an entire expense row for editing
+app.get("/api/edit_expense/:id", (req, res) => {
+  try {
+    const expenseId = req.params.id;
+
+    // SQL query to fetch the entire row where id and user_id match
+    const query = "SELECT * FROM expenses WHERE id = ? AND user_id = ?";
+    db.query(query, [expenseId, req.session.userId], (err, results) => {
+      if (err) {
+        console.error("Error getting expense:", err.message);
+        return res.status(500).send("Error getting expense");
+      }
+
+      // Check if the expense was found
+      if (results.length === 0) {
+        // If no expense is found, return a 404 error with JSON
+        return res
+          .status(404)
+          .json({ success: false, message: "Expense not found" });
+      }
+
+      // Send the entire row (first result) in the response
+      res.status(200).json({ message: "success", expense: results[0] });
+      console.log(results);
+    });
+  } catch (error) {
+    console.error("Unexpected error:", error);
+    res.status(500).send("Unexpected error occurred");
+  }
+});
 
 // Update Expense Route
 app.put("/edit-expense/:id", (req, res) => {
