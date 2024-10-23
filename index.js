@@ -196,7 +196,7 @@ app.get("/api/edit_expense/:id", (req, res) => {
 
       // Send the entire row (first result) in the response
       res.status(200).json({ message: "success", expense: results[0] });
-      console.log(results);
+      console.log(results); 
     });
   } catch (error) {
     console.error("Unexpected error:", error);
